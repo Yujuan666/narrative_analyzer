@@ -1,0 +1,137 @@
+
+You are a financial news analyst.
+
+Analyze the following Tesla news articles.
+
+For all articles combined:
+
+1. Count how many articles are Positive, Negative, or Neutral.
+2. Estimate the percentage of Positive, Negative, and Neutral sentiment.
+3. Identify the top positive reasons mentioned.
+4. Identify the top negative reasons mentioned.
+5. Provide an overall narrative summary.
+6. Provide a confidence score between 0 and 100.
+
+News Articles:
+
+
+Date: 2026-06-06
+Source: Yahoo
+Headline: Why Tesla (TSLA) Shares Are Trading Lower Today
+Summary: Shares of electric vehicle pioneer Tesla (NASDAQ:TSLA) fell 6.9% in the afternoon session after reports emerged that the company pushed its next-generation Roadster demo to August.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: JPMorgan Turns Rosy on Tesla a Day After Dimon Lauds Musk
+Summary: (Bloomberg) -- The morning after Jamie Dimon offered Elon Musk an audience to talk up SpaceX, JPMorgan Chase & Co.’s new lead autos analyst completely changed the bank’s tune on Tesla Inc.Most Read from BloombergBecerra Advances for California Governor as Hilton Fights SteyerSpaceX, Other Mega IPOs Denied Fast Index Entry by S&PNasdaq 100 Sinks 5% in AI-Led Rout as Yields Climb: Markets WrapWhat to Expect From Apple’s AI, Siri and iOS 27 Launch at WWDCSaylor’s Bitcoin Machine Is Misfiring on Eve
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: SpaceX IPO could turn Elon Musk into world's first trillionaire
+Summary: Tesla (TSLA) CEO Elon Musk is just one week away from his next big venture: the IPO of his space company SpaceX (SPAX.PVT). This event will be enough to push Musk's net worth over the edge and make him the world's first trillionaire. Yahoo Finance Senior Autos Reporter Pras Subramanian breaks down Musk's net worth and some of the risks that Wall Street is floating around the IPO. SpaceX is slated to begin trading publicly on the Nasdaq next Friday, June 12, aiming for an IPO price of $135 per share.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Tesla Stock Just Got a Rare 'Upgrade' Ahead of Cybercab Launch
+Summary: Vetern analyst firm revamps Tesla price target for rest of 2026
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Tesla gets double dose of good news from key region
+Summary: Last year, many of the headlines about Tesla coming out of Europe weren't positive. The company was losing market share in a number of European countries where it had traditionally performed well, as the influx of cheaper Chinese alternatives and CEO Elon Musk's foray into politics eroded his ...
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: TSLA Stock On Track For Worst Week In A Year On Fresh Roadster Delay As Musk’s April Promise Fades
+Summary: Tesla has reportedly postponed its planned public demo for its next-generation Roadster to August or later.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Tesla Gets 227.6% Target Boost As JPMorgan Upgrades Rating
+Summary: JPMorgan lifts Tesla to Neutral, citing vertical integration and long-term growth from autonomy, robotics and newer services.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Prediction: Tesla Stock Will Hit $500 on This Date
+Summary: Tesla (NASDAQ:TSLA) sits in an awkward place. Q1 2026 showed automotive gross margin rebounding to 21.1% from 16.2% a year earlier, FSD subscriptions hit 1.28 million (+51% YoY), and free cash flow more than doubled to $1.444 billion. Yet shares closed at $418.45, down 6.95% YTD. Can Tesla reach $500 this cycle? What’s Holding Tesla ... Prediction: Tesla Stock Will Hit $500 on This Date
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Tesla Turned $1,000 Into This Much The Past 10 Years
+Summary: From Near-Bankruptcy to the AI and Autonomy Bet Ten years ago, Tesla (NASDAQ:TSLA) was a Model S and Model X maker scrambling to ramp the Model 3 and absorb SolarCity. The decade since has packed in production hell, a brush with insolvency, S&P 500 inclusion in late 2020, a euphoric run past a $1 trillion ... Tesla Turned $1,000 Into This Much The Past 10 Years
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Can AI and Robotics Revive Tesla? ETFs Worth Considering
+Summary: A renewed focus on AI and robotics is reshaping Tesla's investment story. Here are a few Tesla-heavy ETFs that are worth considering.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Lemonade Tests Tesla Usage Based Auto Cover As Losses Remain A Focus
+Summary: Lemonade (NYSE:LMND) introduced autonomous car insurance for Tesla owners in Indiana. The product is tailored to Tesla drivers using Full Self Driving technology. Pricing is usage based, with potential cost savings tied to how often Full Self Driving is used. Lemonade, known for its app based renters, homeowners and pet insurance, is expanding further into auto coverage with a focus on Tesla drivers in Indiana. By tying pricing to Full Self Driving usage, the company is using connected car...
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Tesla Uniquely Positioned to Scale Emerging AI Markets, J.P. Morgan Says
+Summary: Tesla's (TSLA) competitive edge of deep vertical integration across hardware and software, coupled w
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: JP Morgan upgrades Tesla to neutral, raises price target to $475
+Summary: The bank's new analyst shifted focus to Tesla's robotics and autonomous driving potential, away from its slowing EV business
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: SpaceX’s IPO is Set to Make Elon Musk a Trillionaire. Here’s 4 Key Figures That Will Become Billionaires.
+Summary: It’s big news as the buzz gets louder surrounding the most publicized IPO in years. CNBC reporter Robert Frank reported on June 5 that SpaceX’s IPO is set to price next Friday, June 12, at $135 per share. The deal would potentially lift Tesla (NASDAQ:TSLA) CEO Elon Musk’s net worth past $1 trillion, crowning him ... SpaceX’s IPO is Set to Make Elon Musk a Trillionaire. Here’s 4 Key Figures That Will Become Billionaires.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: JPMorgan Upgrades Tesla With A Major Price Target Hike
+Summary: Tesla bear JPMorgan revised its view on Elon Musk's electric vehicle company. The stock is down about 4% this week.
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: As Global Demand for Lithium and Rare Earth Minerals Accelerates, Electros Inc. Attracts Growing Attention From Microcap and Penny Stock Investors Across the Globe
+Summary: Industry Perspective "Lithium batteries are the new oil." - Elon Musk, Tesla CEO (publicly reported statement regarding the strategic importance of battery materials). "Lithium, nickel, cobalt, manganese and graphite are crucial to battery performance, ...
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: Lithium and Rare Earth Minerals are the Foundation of the Electric Vehicle Revolution - Electros Inc. Continues to Attract Attention From Microcap and Growth-Oriented Investors Worldwide
+Summary: Industry Perspective: "Lithium batteries are the new oil." - Elon Musk, Tesla CEO (publicly reported statement regarding the strategic importance of battery materials). "Lithium, nickel, cobalt, manganese and graphite are crucial to battery performance, ...
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: JP Morgan Triples Tesla's Price Target
+Summary: Gupta shifts the valuation framework to robotics and autonomy to justify the upgrade
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: From The Minerals That Power Electric Vehicles To Technologies That May Help Shape Their Future, Electros Inc. Continues To Pursue Its Long-Term Vision
+Summary: Industry Perspective "Lithium batteries are the new oil." - Elon Musk, Tesla CEO (publicly reported statement regarding the strategic importance of battery materials). "Lithium, nickel, cobalt, manganese and graphite are crucial to battery performance, ...
+
+
+Date: 2026-06-05
+Source: Yahoo
+Headline: The Foundations of the Electric Future: As Global Demand for Lithium and Rare Earth Minerals Continues to Expand, Electros Inc. Advances Its Vision for Energy, Innovation, and Long-Term Shareholder Value
+Summary: Industry Perspective "Lithium batteries are the new oil." - Elon Musk, Tesla CEO (publicly reported statement regarding the strategic importance of battery materials). "Lithium, nickel, cobalt, manganese and graphite are crucial to battery performance, ...
+
+
