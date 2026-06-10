@@ -308,7 +308,7 @@ def save_results(data: dict, filename: str = None) -> str:
     print(f"💾 Results saved to: {filename}")
     return filename
 
-
+'''
 # ─── CLI Entry Point ─────────────────────────────────────────────────────────
 
 def main():
@@ -357,3 +357,42 @@ def main():
 
 if __name__ == "__main__":
     main()
+'''
+
+# update to only focus on tesla due to time limit
+def clean_news(news_articles):
+
+    cleaned = []
+
+    for article in news_articles:
+
+        cleaned.append({
+            "date":      article.get("published_iso", "")[:10],
+            "headline":  article.get("title",         ""),
+            "summary":   article.get("description",   ""),
+            "source":    article.get("source_name",   ""),
+            "ticker":    "TSLA",
+            "url":       article.get("link",          ""),
+            "sentiment": None,
+        })
+
+    return cleaned
+
+
+if __name__ == "__main__":
+
+    results = scrape_company_news(company="Tesla")
+
+    news = results["articles"]
+
+    print("Articles:", len(news))
+
+    cleaned_news = clean_news(news)
+
+    print("\nFirst cleaned article:\n")
+    print(cleaned_news[0])
+
+    with open("data/tesla_news_googlenews.json", "w", encoding="utf-8") as f:
+        json.dump(cleaned_news, f, indent=2, ensure_ascii=False)
+
+    print("Saved to data/tesla_news_googlenews.json")

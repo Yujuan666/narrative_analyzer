@@ -1,8 +1,12 @@
 # read json file
 import json
+import glob
 
-with open("data/tesla_news.json", "r") as f:
-    articles = json.load(f)
+files = glob.glob("data/tesla_news*.json")
+articles = []
+for f in files:
+    with open(f) as fp:
+        articles.extend(json.load(fp))
 
 print(f"Loaded {len(articles)} articles")
 
