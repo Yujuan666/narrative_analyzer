@@ -1,4 +1,5 @@
 import json
+import re
 from langchain_ollama import OllamaLLM
 from src.llm.prompts import TESLA_ANALYSIS_PROMPT
 
@@ -25,7 +26,7 @@ Summary: {article['summary']}
 # Build prompt
 prompt = TESLA_ANALYSIS_PROMPT.format(
     news_text=combined_text
-)
+) + f"\n\nTotal articles provided: {len(recent_articles)}"
 
 # Load model
 llm = OllamaLLM(model="llama3")
@@ -34,9 +35,21 @@ print("Analyzing Tesla news...\n")
 
 response = llm.invoke(prompt)
 
-print(response)
+result = response
 
-with open("data/analysis.json", "w") as f:
-    f.write(response)
+match = re.search(r"\{.*\}", result, re.DOTALL)
 
-print("Analysis saved!")
+if match:
+    json_text = match.group()
+
+    analysis = json.loads(json_text)
+
+    print(json.dumps(analysis, indent=2))
+
+    with open("data/analysis.json", "w") as f:
+        json.dump(analysis, f, indent=2)
+
+    print("Analysis saved!")
+else:
+    print("No valid JSON found.")
+    print(result)

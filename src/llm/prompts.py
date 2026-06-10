@@ -8,68 +8,117 @@ Return ONLY valid JSON.
 Required format:
 
 {{
-  "company": "Tesla",
-  "articles_analyzed": number,
-  "bullish_articles": number,
-  "bearish_articles": number,
-  "neutral_articles": number,
-  "bullish_percentage": number,
-  "bearish_percentage": number,
-  "neutral_percentage": number,
-  "bullish_reasons": [],
-  "bearish_reasons": [],
-  "narrative_summary": "",
-  "confidence_score": integer from 0 to 100
+"company": "Tesla",
+
+"overall_sentiment": "Bullish | Bearish | Neutral",
+
+"articles_analyzed": number,
+
+"source_breakdown": {{
+"Yahoo": number,
+"Reuters": number,
+"Bloomberg": number
+}},
+
+"bullish_articles": number,
+"bearish_articles": number,
+"neutral_articles": number,
+
+"bullish_percentage": number,
+"bearish_percentage": number,
+"neutral_percentage": number,
+
+"bullish_reasons": [],
+"bearish_reasons": [],
+
+"narrative_summary": "",
+
+"confidence_score": integer
 }}
 
-IMPORTANT:
+IMPORTANT RULES
 
-- Classify every article as Bullish, Bearish, or Neutral.
-- Count the totals.
-- Do NOT return article headlines.
-- Extract recurring themes across articles.
-- Bullish reasons must be business themes.
-- Bearish reasons must be business themes.
-- Confidence score MUST be an integer between 0 and 100.
-- Confidence score reflects how consistent the overall narrative is across articles.
+* Classify every article as Bullish, Bearish, or Neutral.
+* Count the totals.
+* articles_analyzed MUST equal Total articles provided.
+* Never estimate this value.
+* Do NOT invent article counts.
+* Count how many articles came from each source and return them in source_breakdown.
+* Include ALL news sources that appear in the provided articles.
 
-Examples:
+OVERALL SENTIMENT
 
-Bullish themes:
-- Analyst upgrades
-- Positive earnings expectations
-- AI leadership
-- Robotaxi optimism
-- Production growth
-- Positive regional sales outlook
+Determine overall_sentiment using the dominant sentiment:
 
-Bearish themes:
-- Product delays
-- Regulatory risks
-- EV competition
-- Valuation concerns
-- Weak demand
-- Macroeconomic uncertainty
+* Highest bullish percentage → Bullish
+* Highest bearish percentage → Bearish
+* Otherwise → Neutral
 
-BAD:
-- Tesla gets double dose of good news from key region
-- TSLA Stock On Track For Worst Week In A Year
+overall_sentiment must contain ONLY:
 
-GOOD:
-- Positive regional sales outlook
-- Product launch delays
-- Analyst upgrades
-- EV competition
-- Valuation concerns
+* Bullish
+* Bearish
+* Neutral
 
-IMPORTANT:
+BULLISH AND BEARISH REASONS
+
+* Extract recurring themes across articles.
+* Do NOT return article headlines.
+* Reasons must be generalized business themes.
+* Maximum 5 bullish reasons.
+* Maximum 5 bearish reasons.
+* Each reason must contain 2–5 words.
+
+GOOD BULLISH EXAMPLES
+
+* Analyst upgrades
+* Production growth
+* Robotaxi optimism
+* Strong sales outlook
+* AI leadership
+
+GOOD BEARISH EXAMPLES
+
+* Product delays
+* Regulatory risks
+* EV competition
+* Weak demand
+* Valuation concerns
+
+BAD EXAMPLES
+
+* Tesla gets double dose of good news from key region
+* TSLA Stock On Track For Worst Week In A Year
+
+NARRATIVE SUMMARY
+
+* Must contain 3–5 sentences.
+* Must never be empty.
+* Must summarize ALL analyzed articles.
+* Must identify the dominant themes across the dataset.
+* Must mention both bullish and bearish factors if present.
+* Must not focus on a single article.
+* Must explain why the overall sentiment is Bullish, Bearish, or Neutral.
+
+CONFIDENCE SCORE
+
+* Must be an integer between 0 and 100.
+* No decimals.
+* Confidence reflects how consistent the overall narrative is across articles.
+
+FINAL OUTPUT RULES
+
 Return ONLY the JSON object.
 
-Do not provide explanations.
-Do not provide notes.
-Do not provide markdown.
-Do not wrap the JSON in ```json blocks.
-Do not provide text before or after the JSON.
+Do not provide:
+
+* explanations
+* notes
+* comments
+* markdown
+* code blocks
+* text before JSON
+* text after JSON
 
 News:
 

@@ -1,18 +1,34 @@
-Here is the JSON output:
-
 {
   "company": "Tesla",
-  "articles_analyzed": 17,
-  "bullish_articles": 5,
-  "bearish_articles": 6,
-  "neutral_articles": 6,
-  "bullish_percentage": 29.41,
-  "bearish_percentage": 35.29,
-  "neutral_percentage": 35.29,
-  "bullish_reasons": ["Analyst upgrades", "Positive earnings expectations", "Tesla gets double dose of good news from key region", "JPMorgan lifts Tesla to Neutral"],
-  "bearish_reasons": ["Product delays", "Regulatory risks", "EV competition", "Valuation concerns", "Weak demand", "TSLA Stock On Track For Worst Week In A Year On Fresh Roadster Delay As Musk’s April Promise Fades"],
-  "narrative_summary": "The articles analyzed contain a mix of both bullish and bearish sentiments towards Tesla. The main reasons for the bullish sentiment are analyst upgrades, positive earnings expectations, and Tesla's good news from key regions. The bearish sentiment is driven by product delays, regulatory risks, EV competition, valuation concerns, and weak demand.",
-  "confidence_score": 0.7
+  "overall_sentiment": "Bearish",
+  "articles_analyzed": 20,
+  "source_breakdown": {
+    "Yahoo": 17,
+    "Reuters": 0,
+    "Bloomberg": 3
+  },
+  "bullish_articles": 4,
+  "bearish_articles": 15,
+  "neutral_articles": 1,
+  "bullish_percentage": 20.0,
+  "bearish_percentage": 75.0,
+  "neutral_percentage": 5.0,
+  "bullish_reasons": [
+    "Analyst upgrades",
+    "Strong sales outlook",
+    "AI leadership",
+    "Robotaxi optimism"
+  ],
+  "bearish_reasons": [
+    "Product delays",
+    "Regulatory risks",
+    "EV competition",
+    "Weak demand",
+    "Valuation concerns",
+    "Fed rate increase expectations",
+    "TSLA Stock On Track For Worst Week In A Year",
+    "Fresh Roadster delay as Musk's April promise fades"
+  ],
+  "narrative_summary": "The overall sentiment is bearish due to the majority of articles focusing on negative factors such as product delays, regulatory risks, and valuation concerns. However, there are some bullish reasons mentioned, including analyst upgrades, strong sales outlook, AI leadership, and robotaxi optimism.",
+  "confidence_score": 80
 }
-
-Note: The confidence score of 0.7 is a subjective measure that takes into account the overall tone and themes present in the articles analyzed. It can be adjusted based on further analysis or additional data points.
