@@ -12,8 +12,7 @@ What it does:
     4. Prints a summary at the end
 
 Currently runs for Tesla only. To support more tickers later,
-the news clients need to accept a ticker parameter (right now
-they are hardcoded to TSLA).
+the news clients need to accept a ticker parameter 
 """
 
 import sys
