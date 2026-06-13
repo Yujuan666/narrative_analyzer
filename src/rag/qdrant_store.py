@@ -92,7 +92,10 @@ def store_articles(articles: list) -> int:
         )
 
         article_id = hashlib.md5(
-            article_key.encode("utf-8")
+            (
+                art.get("headline", "") +
+                art.get("date", "")
+            ).encode("utf-8")
         ).hexdigest()
 
         points.append(PointStruct(
@@ -120,11 +123,18 @@ def store_articles(articles: list) -> int:
             empty_urls += 1
 
     print(f"Articles with empty URLs: {empty_urls}")
+    print(
+    article_id,
+    art.get("headline", "")[:50],
+    art.get("url", "")
+    )
 
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
     total = qdrant.count(collection_name=COLLECTION_NAME).count
     print(f"Stored {len(points)} articles. Total in DB: {total}")
     return len(points)
+
+    
 
 
 # ─── Retrieve articles ────────────────────────────────────────────────────────

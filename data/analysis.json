@@ -1,28 +1,32 @@
 {
   "company": "Tesla",
-  "overall_sentiment": "Neutral",
+  "overall_sentiment": "Bullish",
   "articles_analyzed": 30,
   "source_breakdown": {
-    "Yahoo": 29,
-    "Bloomberg": 1,
-    "SeekingAlpha": 1
+    "Yahoo": 24,
+    "SeekingAlpha": 2,
+    "CNBC": 1,
+    "Benzinga": 3
   },
-  "bullish_articles": 18,
-  "bearish_articles": 7,
-  "neutral_articles": 5,
-  "bullish_percentage": 60,
-  "bearish_percentage": 23.33,
-  "neutral_percentage": 16.67,
+  "bullish_articles": 15,
+  "bearish_articles": 9,
+  "neutral_articles": 6,
+  "bullish_percentage": 50.0,
+  "bearish_percentage": 30.0,
+  "neutral_percentage": 20.0,
   "bullish_reasons": [
-    "SpaceX IPO success",
-    "Trillionaire milestone",
-    "AI leadership"
+    "Robotaxi optimism",
+    "AI leadership",
+    "Analyst upgrades",
+    "Strong sales outlook"
   ],
   "bearish_reasons": [
-    "Investor shift fears",
-    "Valuation concerns",
-    "Product delays"
+    "Product delays",
+    "Regulatory risks",
+    "EV competition",
+    "Weak demand",
+    "Valuation concerns"
   ],
-  "narrative_summary": "The narrative surrounding Tesla is largely neutral, with a slight bullish tilt. Articles highlight the success of SpaceX's IPO and Musk becoming the world\u2019s first trillionaire, which boosts investor sentiment. However, there are also concerns about potential investor shifts towards SpaceX, valuation concerns, and product delays that could impact Tesla.",
+  "narrative_summary": "Tesla's stock performance is mixed, with both positive and negative factors influencing its value. Analysts are optimistic about the company\u2019s AI advancements and robotaxi services but also caution on potential regulatory challenges and competitive pressures from other EV manufacturers.",
   "confidence_score": 85
 }

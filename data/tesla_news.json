@@ -1,6 +1,22 @@
 [
   {
     "date": "2026-06-13",
+    "headline": "SpaceX Settles",
+    "summary": "Bankers working the deal, led by Goldman Sachs and Morgan Stanley as the co-lead, priced SpaceX at $135/share last night, giving the company a market cap of roughly $1.77 trillion.",
+    "source": "SeekingAlpha",
+    "ticker": "TSLA",
+    "url": "https://finnhub.io/api/news?id=6eff06620d130023ffeb74b9eabd9a40a54da24b51b05155e5a480fc1a5f9d13"
+  },
+  {
+    "date": "2026-06-13",
+    "headline": "World's First Net-Worth Trillionaire Shows Us How Markets Price The Future",
+    "summary": "Following the pricing of the SpaceX IPO, Elon Musk has become the world\u00e2\u0080\u0099s first trillionaire, on paper.",
+    "source": "SeekingAlpha",
+    "ticker": "TSLA",
+    "url": "https://finnhub.io/api/news?id=eae5fd1a33f64dc42f4217730acdb9d3b293d5e8ae399ffbb9e2511833829d0d"
+  },
+  {
+    "date": "2026-06-13",
     "headline": "Review & Preview: Party of 1",
     "summary": "REVIEW PREVIEW NEWSLETTER To Infinity and Beyond. There are 3,362 companies listed on the Nasdaq Composite. On Friday, only one seemed to matter. SpaceX, Elon Musk\u2019s rocket and AI company, opened for trading at 11:46 a.",
     "source": "Yahoo",
@@ -1974,21 +1990,5 @@
     "source": "Benzinga",
     "ticker": "TSLA",
     "url": "https://finnhub.io/api/news?id=e787cb05be3f29cc94a781dc78eb580d6e42abe104276ce24a573ba7cc07f3c7"
-  },
-  {
-    "date": "2026-06-10",
-    "headline": "No Slowing Down: Taiwan Semiconductor May Sales Leap 30% On Relentless AI Demand",
-    "summary": "Taiwan Semiconductor May revenue jumps 30.1% YoY to NT$416.98B as AI chip demand fuels massive 2026 year-to-date growth. Read more.",
-    "source": "Benzinga",
-    "ticker": "TSLA",
-    "url": "https://finnhub.io/api/news?id=1743243f498426af0cb14466366c5dd407abe4ba11f73b4bdee712347acd1947"
-  },
-  {
-    "date": "2026-06-10",
-    "headline": "ProShares Plans 2x SpaceX ETF Launch on Day of Record IPO",
-    "summary": "ProShares will launch SPCF, a 2x daily SpaceX ETF, on June 12 as the record IPO draws $250 billion in demand.",
-    "source": "Yahoo",
-    "ticker": "TSLA",
-    "url": "https://finnhub.io/api/news?id=00d252899491a00f26090025a58ed00ca30950e9c9686a095a51a0619b23f487"
   }
 ]
