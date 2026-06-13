@@ -1,55 +1,119 @@
 import json
 import re
+import glob
 from langchain_ollama import OllamaLLM
 from src.llm.prompts import TESLA_ANALYSIS_PROMPT
 
+def analyze(ticker="TSLA", company_name="Tesla"):
 # Load news
-with open("data/tesla_news.json", "r") as f:
-    articles = json.load(f)
+    all_articles = []
 
-# Use first 20 Tesla articles
-recent_articles = articles[:20]
+    json_files = glob.glob("data/*.json")
 
-print(f"Articles sent to LLM: {len(recent_articles)}")
+    print("Files found:")
+    print(json_files)
 
-combined_text = ""
+    for file in json_files:
 
-for article in recent_articles:
-    combined_text += f"""
-Date: {article['date']}
-Source: {article['source']}
-Headline: {article['headline']}
-Summary: {article['summary']}
+        # Skip analysis output file
+        if "analysis.json" in file:
+            continue
 
+        with open(file, "r") as f:
+
+            data = json.load(f)
+
+            if isinstance(data, list):
+                all_articles.extend(data)
+
+    print(f"Total articles loaded: {len(all_articles)}")
+
+    seen = set()
+    unique_articles = []
+
+    for article in all_articles:
+
+        headline = article.get("headline", "")
+
+        if headline not in seen:
+            seen.add(headline)
+            unique_articles.append(article)
+
+    all_articles = unique_articles
+
+    print(
+        f"Unique articles: {len(all_articles)}"
+    )
+
+    recent_articles = all_articles[:30]
+
+    print(f"Articles sent to LLM: {len(recent_articles)}")
+
+    combined_text = ""
+
+    for article in recent_articles:
+        combined_text += f"""
+    Date: {article['date']}
+    Source: {article['source']}
+    Headline: {article['headline']}
+
+    Summary: {article['summary']}
+
+    """
+
+    # Build prompt
+    prompt = TESLA_ANALYSIS_PROMPT.format(
+        news_text=combined_text
+    ) + f"\n\nTotal articles provided: {len(recent_articles)}"
+
+    # Load model
+    llm      = OllamaLLM(model="qwen2.5:7b", temperature=0.1)
+
+    print("Analyzing Tesla news...\n")
+
+    response = llm.invoke(
+    prompt +
+    """
+
+CRITICAL:
+Your response must begin with {
+and end with }.
+
+Return only JSON.
+Do not use markdown.
+Do not use headings.
+Do not explain your reasoning.
 """
+)
 
-# Build prompt
-prompt = TESLA_ANALYSIS_PROMPT.format(
-    news_text=combined_text
-) + f"\n\nTotal articles provided: {len(recent_articles)}"
+    result = response
 
-# Load model
-llm = OllamaLLM(model="llama3")
+    print("\nRAW RESPONSE:\n")
+    print(response)
 
-print("Analyzing Tesla news...\n")
+    match = re.search(r"\{.*\}", result, re.DOTALL)
 
-response = llm.invoke(prompt)
+    if match:
+        json_text = match.group()
 
-result = response
+        try:
+            analysis = json.loads(json_text)
+        except Exception as e:
+            print(f"JSON parsing failed: {e}")
+            print(json_text)
+            return {"error": "Invalid JSON"}
 
-match = re.search(r"\{.*\}", result, re.DOTALL)
+        print(json.dumps(analysis, indent=2))
 
-if match:
-    json_text = match.group()
+        with open("data/analysis.json", "w") as f:
+            json.dump(analysis, f, indent=2)
 
-    analysis = json.loads(json_text)
+        print("Analysis saved!")
+        return analysis
+    else:
+        print("No valid JSON found.")
+        print(result)
+        return {"error": "No valid JSON found"}
 
-    print(json.dumps(analysis, indent=2))
-
-    with open("data/analysis.json", "w") as f:
-        json.dump(analysis, f, indent=2)
-
-    print("Analysis saved!")
-else:
-    print("No valid JSON found.")
-    print(result)
+if __name__ == "__main__":
+    analyze()

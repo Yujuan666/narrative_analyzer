@@ -10,6 +10,9 @@ st.set_page_config(
 with open("data/analysis.json", "r") as f:
     analysis = json.load(f)
 
+with open("data/tesla_news.json", "r") as f:
+    news = json.load(f)
+
 st.title("🚗 Tesla Narrative Analyzer")
 
 st.caption(
@@ -78,6 +81,24 @@ st.bar_chart(
     chart_data.set_index("Sentiment")
 )
 
+st.subheader("News Sources")
+
+source_df = pd.DataFrame(
+    list(analysis["source_breakdown"].items()),
+    columns=["Source", "Articles"]
+)
+
+st.subheader("News Sources")
+
+source_df = pd.DataFrame(
+    list(analysis["source_breakdown"].items()),
+    columns=["Source", "Articles"]
+)
+
+st.dataframe(source_df)
+
+st.dataframe(source_df)
+
 st.subheader("Overall Sentiment")
 
 if "overall_sentiment" in analysis:
@@ -90,3 +111,20 @@ if "overall_sentiment" in analysis:
 
     else:
         st.info("⚪ Neutral")
+
+
+st.subheader("Recent Headlines")
+
+for article in news[:10]:
+
+    with st.expander(article["headline"]):
+
+        st.write(article["summary"])
+
+        st.write(
+            f"Source: {article['source']}"
+        )
+
+        st.markdown(
+            f"[Read article]({article['url']})"
+    )

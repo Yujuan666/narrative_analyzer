@@ -11,7 +11,7 @@ Three main functions used by other files:
     ask(question, ticker)            — RAG Q&A: retrieve + LLM answer
 """
 
-import uuid
+import hashlib
 from pathlib import Path
 from datetime import datetime
 
@@ -77,8 +77,26 @@ def store_articles(articles: list) -> int:
 
         vector = embedder.encode(text).tolist()
 
+        article_key = (
+            art.get("url")
+            or f"{art.get('headline','')}_{art.get('date','')}"
+        )
+
+        #article_id = hashlib.md5(
+            #article_key.encode("utf-8")
+        #).hexdigest()
+
+        article_key = (
+            art.get("url")
+            or f"{art.get('headline','')}_{art.get('date','')}"
+        )
+
+        article_id = hashlib.md5(
+            article_key.encode("utf-8")
+        ).hexdigest()
+
         points.append(PointStruct(
-            id=str(uuid.uuid4()),
+            id=article_id,
             vector=vector,
             payload={
                 "ticker":    art.get("ticker",   ""),
@@ -94,6 +112,14 @@ def store_articles(articles: list) -> int:
 
     if not points:
         return 0
+    
+    empty_urls = 0
+
+    for art in articles:
+        if not art.get("url"):
+            empty_urls += 1
+
+    print(f"Articles with empty URLs: {empty_urls}")
 
     qdrant.upsert(collection_name=COLLECTION_NAME, points=points)
     total = qdrant.count(collection_name=COLLECTION_NAME).count
@@ -121,12 +147,20 @@ def retrieve(query: str, ticker: str = None, top_k: int = 5) -> list:
             FieldCondition(key="ticker", match=MatchValue(value=ticker.upper()))
         ])
 
-    hits = qdrant.search(
-        collection_name=COLLECTION_NAME,
-        query_vector=query_vector,
-        query_filter=search_filter,
-        limit=top_k,
-    )
+   #hits = qdrant.search(
+        #collection_name=COLLECTION_NAME,
+        #query_vector=query_vector,
+        #query_filter=search_filter,
+        #limit=top_k,
+    #)
+
+    hits = qdrant.query_points(
+    collection_name=COLLECTION_NAME,
+    query=query_vector,
+    query_filter=search_filter,
+    limit=top_k,
+    ).points
+
 
     results = []
     for hit in hits:

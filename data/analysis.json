@@ -1,34 +1,28 @@
 {
   "company": "Tesla",
-  "overall_sentiment": "Bearish",
-  "articles_analyzed": 20,
+  "overall_sentiment": "Neutral",
+  "articles_analyzed": 30,
   "source_breakdown": {
-    "Yahoo": 17,
-    "Reuters": 0,
-    "Bloomberg": 3
+    "Yahoo": 29,
+    "Bloomberg": 1,
+    "SeekingAlpha": 1
   },
-  "bullish_articles": 4,
-  "bearish_articles": 15,
-  "neutral_articles": 1,
-  "bullish_percentage": 20.0,
-  "bearish_percentage": 75.0,
-  "neutral_percentage": 5.0,
+  "bullish_articles": 18,
+  "bearish_articles": 7,
+  "neutral_articles": 5,
+  "bullish_percentage": 60,
+  "bearish_percentage": 23.33,
+  "neutral_percentage": 16.67,
   "bullish_reasons": [
-    "Analyst upgrades",
-    "Strong sales outlook",
-    "AI leadership",
-    "Robotaxi optimism"
+    "SpaceX IPO success",
+    "Trillionaire milestone",
+    "AI leadership"
   ],
   "bearish_reasons": [
-    "Product delays",
-    "Regulatory risks",
-    "EV competition",
-    "Weak demand",
+    "Investor shift fears",
     "Valuation concerns",
-    "Fed rate increase expectations",
-    "TSLA Stock On Track For Worst Week In A Year",
-    "Fresh Roadster delay as Musk's April promise fades"
+    "Product delays"
   ],
-  "narrative_summary": "The overall sentiment is bearish due to the majority of articles focusing on negative factors such as product delays, regulatory risks, and valuation concerns. However, there are some bullish reasons mentioned, including analyst upgrades, strong sales outlook, AI leadership, and robotaxi optimism.",
-  "confidence_score": 80
+  "narrative_summary": "The narrative surrounding Tesla is largely neutral, with a slight bullish tilt. Articles highlight the success of SpaceX's IPO and Musk becoming the world\u2019s first trillionaire, which boosts investor sentiment. However, there are also concerns about potential investor shifts towards SpaceX, valuation concerns, and product delays that could impact Tesla.",
+  "confidence_score": 85
 }
